@@ -1,0 +1,7 @@
+[
+	{
+		"appName":"starship",
+		"cfgPath":"$HOME/.config",
+		"replace": false
+	}
+]
