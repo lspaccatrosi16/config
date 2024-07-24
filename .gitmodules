@@ -1,0 +1,3 @@
+[submodule "neovim/pack/packer/start/packer.nvim"]
+	path = neovim/pack/packer/start/packer.nvim
+	url = https://github.com/wbthomason/packer.nvim
