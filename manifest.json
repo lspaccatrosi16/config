@@ -1,7 +1,12 @@
 [
-	{
-		"appName":"starship",
-		"cfgPath":"$HOME/.config",
-		"replace": false
-	}
+  {
+    "appName": "starship",
+    "cfgPath": "$HOME/.config",
+    "replace": false
+  },
+  {
+    "appName": "neovim",
+    "cfgPath": "$HOME/.config/nvim",
+    "replace": true
+  }
 ]
