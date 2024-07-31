@@ -1,3 +1,7 @@
+-- Undotree:
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+
+-- Harpoon:
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 
