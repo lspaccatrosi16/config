@@ -1,4 +1,4 @@
-require("lspaccatrosi16.config.cmp")
+require("lspaccatrosi16.config.lualine")
 require("lspaccatrosi16.config.generic")
 require("lspaccatrosi16.config.lsp")
 require("lspaccatrosi16.config.nightfox")

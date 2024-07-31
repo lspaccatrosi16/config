@@ -11,6 +11,8 @@ return require('packer').startup(function(use)
     use 'EdenEast/nightfox.nvim'
     use 'numToStr/Comment.nvim'
     use 'akinsho/toggleterm.nvim'
+    use 'echasnovski/mini.nvim'
+    use 'nvim-lualine/lualine.nvim'
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.8',
