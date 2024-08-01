@@ -7,7 +7,6 @@ local setup = function (name, config)
     end
 end
 
-setup('scrollEOF')
 setup('telescope')
 setup('Comment')
 setup('treesj')

@@ -1,3 +1,6 @@
 [submodule "neovim/pack/packer/start/packer.nvim"]
 	path = neovim/pack/packer/start/packer.nvim
 	url = https://github.com/wbthomason/packer.nvim
+[submodule "neovim/lua/tl"]
+	path = neovim/lua/tl
+	url = https://github.com/teal-language/tl

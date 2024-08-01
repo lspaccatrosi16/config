@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/luca/.local/share/nvim/site/pack/packer/start/mini.nvim",
     url = "https://github.com/echasnovski/mini.nvim"
   },
+  ["neodev.nvim"] = {
+    loaded = true,
+    path = "/home/luca/.local/share/nvim/site/pack/packer/start/neodev.nvim",
+    url = "https://github.com/folke/neodev.nvim"
+  },
   ["nightfox.nvim"] = {
     loaded = true,
     path = "/home/luca/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
@@ -153,11 +158,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/luca/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["scrollEOF.nvim"] = {
-    loaded = true,
-    path = "/home/luca/.local/share/nvim/site/pack/packer/start/scrollEOF.nvim",
-    url = "https://github.com/Aasim-A/scrollEOF.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
