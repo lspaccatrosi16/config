@@ -89,6 +89,16 @@ _G.packer_plugins = {
     path = "/home/luca/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["go.nvim"] = {
+    loaded = true,
+    path = "/home/luca/.local/share/nvim/site/pack/packer/start/go.nvim",
+    url = "https://github.com/ray-x/go.nvim"
+  },
+  ["guihua.lua"] = {
+    loaded = true,
+    path = "/home/luca/.local/share/nvim/site/pack/packer/start/guihua.lua",
+    url = "https://github.com/ray-x/guihua.lua"
+  },
   harpoon = {
     loaded = true,
     path = "/home/luca/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -98,6 +108,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/luca/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/home/luca/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,

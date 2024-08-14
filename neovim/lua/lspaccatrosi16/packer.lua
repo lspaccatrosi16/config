@@ -14,6 +14,8 @@ return require('packer').startup(function(use)
     use 'nvim-lualine/lualine.nvim'
     use 'folke/neodev.nvim'
     use 'nvim-lua/plenary.nvim'
+    use 'ray-x/go.nvim'
+    use 'ray-x/guihua.lua'
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.8',
@@ -30,6 +32,7 @@ return require('packer').startup(function(use)
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'L3MON4D3/LuaSnip' },
+            { 'onsails/lspkind.nvim' }
         }
     }
 
@@ -37,4 +40,5 @@ return require('packer').startup(function(use)
         'Wansmer/treesj',
         requires = { 'nvim-treesitter/nvim-treesitter' }
     }
+
 end)

@@ -9,9 +9,11 @@ local wrap_telescope_theme = function(cmd)
     end
 end
 
+local config = require("lspaccatrosi16/remaps.config")
+local sec = config.sections:add("p", "project commands")
 
-vim.keymap.set('n', '<leader>pf', wrap_telescope_theme(builtin.find_files), {})
-vim.keymap.set('n', '<leader>ps', wrap_telescope_theme(builtin.live_grep), {})
-vim.keymap.set('n', '<leader>pe', wrap_telescope_theme(builtin.diagnostics), {})
-vim.keymap.set('n', '<leader>fs', wrap_telescope_theme(builtin.treesitter), {})
-vim.keymap.set('n', '<leader>ph', wrap_telescope_theme(builtin.help_tags), {})
+sec.add('n', 'f', wrap_telescope_theme(builtin.find_files), "project file search")
+sec.add('n', 's', wrap_telescope_theme(builtin.live_grep), "project live grep")
+sec.add('n', 'e', wrap_telescope_theme(builtin.diagnostics), "project diagnostics search")
+sec.add('n', 'h', wrap_telescope_theme(builtin.help_tags), "help search")
+sec.add('n', 'v', vim.cmd.Ex, 'project file manager')

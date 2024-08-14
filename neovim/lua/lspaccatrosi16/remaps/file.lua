@@ -1,2 +1,16 @@
+local builtin = require('telescope.builtin')
+local themes = require('telescope.themes')
+local dropdown = themes.get_dropdown({})
 
-vim.keymap.set("n", "<leader>ft", ":TSJToggle")
+local wrap_telescope_theme = function(cmd)
+    return function()
+        cmd(dropdown)
+    end
+end
+
+local config = require("lspaccatrosi16/remaps.config")
+local sec = config.sections:add("f", "file commands")
+
+sec.add("n", "t", vim.cmd.TSJToggle, "grow / collapse blocks")
+sec.add("n", "s", wrap_telescope_theme(builtin.treesitter), "file symbol search")
+sec.add("n", "u", vim.cmd.UndotreeToggle, "toggle undo tree")
