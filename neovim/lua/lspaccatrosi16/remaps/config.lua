@@ -8,8 +8,6 @@ end
 function S:add(startchar, description)
     if type(startchar) ~= "string" then
         error("startchar must be a string")
-    elseif #startchar ~= 1 then
-        error("startchar must only be one character long")
     end
 
     self[startchar] = {
@@ -37,8 +35,7 @@ end
 local isSetup = false
 
 local function generate_win_contents(buf)
-    local columns = {}
-    local maxL = 0
+    local sections = {}
     for _, v in pairs(S) do
         if type(v) == "function" then
             goto continue
@@ -56,12 +53,9 @@ local function generate_win_contents(buf)
             end
             table.insert(entries, ent)
         end
-        if curL > maxL then
-            maxL = curL
-        end
         table.sort(entries)
         table.insert(entries, 1, header)
-        table.insert(columns, {
+        table.insert(sections, {
             key = v.ch,
             entries = entries,
             width = curMax,
@@ -69,33 +63,27 @@ local function generate_win_contents(buf)
         ::continue::
     end
 
-    table.sort(columns, function(a, b) return a.key < b.key end)
+    table.sort(sections, function(a, b) return a.key < b.key end)
 
     local lines = {}
+    local maxW = 0
 
-    for i = 1, maxL do
-        local curL = ""
-        for _, v in pairs(columns) do
-            local val = ""
-            if v.entries[i] ~= nil then
-                val = v.entries[i]
+    for _, sec in pairs(sections) do
+        for _, line in pairs(sec.entries) do
+            table.insert(lines, line)
+            if #line > maxW then
+                maxW = #line
             end
-            curL = curL .. string.format("%-" .. string.format("%d", v.width) .. "s    ", val)
         end
-        table.insert(lines, "  " .. string.sub(curL, 1, #curL - 3))
-    end
-
-    local t_width = math.floor(vim.o.columns / 2)
-    if lines[1] ~= nil then
-        t_width = #lines[1] + 1
+        table.insert(lines, "")
     end
 
     vim.api.nvim_buf_set_lines(buf, 0, -1, false, {})
     vim.api.nvim_buf_set_lines(buf, 0, #lines, false, lines)
 
     return {
-        width = t_width,
-        height = maxL,
+        width = maxW + 1,
+        height = #lines,
     }
 end
 
