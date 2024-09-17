@@ -45,10 +45,13 @@ cmp.setup({
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+local noop = function() end
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { "lua_ls", "gopls", "texlab", "tsserver", "jsonls", "ols" },
+    ensure_installed = { "lua_ls", "gopls", "jdtls", "java-test" },
     handlers = {
         function(server_name) require('lspconfig')[server_name].setup({ capabilities = capabilities }) end,
+        jdtls = noop,
     },
 })
