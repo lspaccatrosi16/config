@@ -6,6 +6,7 @@ local cache_vars = {}
 -- these to find the path to your project source code.
 local root_files = {
     '.git',
+    '.javap',
 
     --- here are more examples files that may or
     --- may not work as root files, according to some guy on the internet
@@ -136,7 +137,6 @@ local function jdtls_on_attach(client, bufnr)
 
     -- The following mappings are based on the suggested usage of nvim-jdtls
     -- https://github.com/mfussenegger/nvim-jdtls#usage
-
 end
 
 local function jdtls_setup(event)
@@ -221,6 +221,11 @@ local function jdtls_setup(event)
                 -- settings = {
                 --   profile = 'asdf'
                 -- },
+            },
+            project = {
+                referencedLibraries = {
+                    '*.jar',
+                },
             }
         },
         signatureHelp = {
