@@ -107,7 +107,7 @@ local function setup()
             local info = generate_win_contents(buf)
             local win_id, _ = popup.create(buf, {
                 title = "Shortcuts",
-                ine = math.floor(((vim.o.lines - info.height) / 2) - 1),
+                line = math.floor(((vim.o.lines - info.height) / 2) - 1),
                 col = math.floor((vim.o.columns - info.width) / 2),
                 width = info.width,
                 height = info.height,

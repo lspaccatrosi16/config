@@ -49,7 +49,7 @@ local noop = function() end
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { "lua_ls", "gopls", "jdtls", "java-test" },
+    ensure_installed = { "lua_ls", "gopls", "jdtls" },
     handlers = {
         function(server_name) require('lspconfig')[server_name].setup({ capabilities = capabilities }) end,
         jdtls = noop,
